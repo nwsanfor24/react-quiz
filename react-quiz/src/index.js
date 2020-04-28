@@ -19,7 +19,7 @@ class Quiz extends Component {
             });
         });
     };
-    computerAnswer = (answer, correctAnswer) => {
+    computeAnswer = (answer, correctAnswer) => {
         if (answer === correctAnswer) {
             this.setState({
                 score: this.state.score + 1

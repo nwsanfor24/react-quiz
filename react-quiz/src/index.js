@@ -16,10 +16,16 @@ class Quiz extends Component {
         });
     };
 
+    componentDidMount() {
+        this.getQuestions();
+    }
+
     render() {
         return (
             <div className="container">
                 <div className="title">React Quiz</div>
+                {this.state.questionBank.length > 0 && this.state.questionBank.map(({question, answers,
+                correct, questionId}) => (<h4>{question}</h4>))}
             </div>
         );
     }

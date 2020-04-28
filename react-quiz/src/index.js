@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import ".assets/style.css";
+import ReactDOM from "react-dom";
+import "./assets/style.css";
 
 class Quiz extends Component {
     render() {
@@ -10,3 +11,5 @@ class Quiz extends Component {
         );
     }
 }
+
+ReactDOM.render(<Quiz />, document.getElementById("root"));

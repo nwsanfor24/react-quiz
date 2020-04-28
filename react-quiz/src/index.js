@@ -4,6 +4,18 @@ import "./assets/style.css";
 import quizService from "./quizService";
 
 class Quiz extends Component {
+    state = {
+        questionBank: []
+    };
+
+    getQuestions = () => {
+        quizService().then(question => {
+            this.setState({
+                questionBank: question
+            });
+        });
+    };
+
     render() {
         return (
             <div className="container">

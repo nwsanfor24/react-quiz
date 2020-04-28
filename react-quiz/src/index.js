@@ -36,7 +36,9 @@ class Quiz extends Component {
         return (
             <div className="container">
                 <div className="title">React Quiz</div>
-                {this.state.questionBank.length > 0 && this.state.questionBank.map(({question, answers,
+                {this.state.questionBank.length > 0 && 
+                this.state.responses < 5 &&
+                this.state.questionBank.map(({question, answers,
                 correct, questionId}) => (
                     <QuestionBox 
                         question={question} 
@@ -46,6 +48,8 @@ class Quiz extends Component {
                     />
                     )
                 )}
+
+                {this.state.responses === 5 ? <h2>{this.state.score}</h2> : null}
             </div>
         );
     }
